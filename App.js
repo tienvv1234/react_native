@@ -163,7 +163,11 @@ const mainFlow = () => {
                 name="TrackCreateScreen"
                 component={TrackCreateScreen}
             />
-            <mainTab.Screen name="AccountScreen" component={AccountScreen} />
+            <mainTab.Screen
+                name="AccountScreen"
+                component={AccountScreen}
+                options={{headerShown: false}}
+            />
         </mainTab.Navigator>
     );
 };
