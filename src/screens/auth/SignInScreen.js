@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import AuthForm from '../../components/AuthForm';
 import NavLink from '../../components/NavLink';
@@ -6,7 +6,18 @@ import NavLink from '../../components/NavLink';
 import {Context as AuthContext} from '../../context/AuthContext';
 
 const SignInScreen = ({navigation}) => {
-    const {state, signin} = useContext(AuthContext);
+    const {state, signin, cleanErrorMessage} = useContext(AuthContext);
+
+    useEffect(() => {
+        // navigation.addListener('focus', () => console.log('SignInScreen'));
+        const listener = navigation.addListener('blur', () => {
+            cleanErrorMessage();
+        });
+
+        return () => {
+            listener.remove?.();
+        };
+    }, [cleanErrorMessage, navigation]);
 
     return (
         <View style={styles.container}>

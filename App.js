@@ -29,6 +29,8 @@ import TrackDetailScreen from './src/screens/auth/TrackDetailScreen';
 import TrackListScreen from './src/screens/auth/TrackListScreen';
 import {Provider as AuthProvider} from './src/context/AuthContext';
 import {navigationRef} from './src/navigationRef';
+import ReSolveAuthScreen from './src/screens/auth/ResolveAuthScreen';
+
 const loginStack = createNativeStackNavigator();
 
 // const App = () => {
@@ -173,6 +175,10 @@ const App = () => {
         <NavigationContainer ref={navigationRef}>
             <RootStack.Navigator>
                 <RootStack.Screen
+                    name="ResolveAuth"
+                    component={ReSolveAuthScreen}
+                />
+                <RootStack.Screen
                     name="LoginFlow"
                     component={loginFlow}
                     options={{headerShown: false}}
@@ -186,7 +192,6 @@ const App = () => {
         </NavigationContainer>
     );
 };
-
 // export default App;
 export default () => {
     return (
