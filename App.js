@@ -30,6 +30,7 @@ import TrackListScreen from './src/screens/auth/TrackListScreen';
 import {Provider as AuthProvider} from './src/context/AuthContext';
 import {navigationRef} from './src/navigationRef';
 import ReSolveAuthScreen from './src/screens/auth/ResolveAuthScreen';
+import Header from './src/components/Header';
 
 const loginStack = createNativeStackNavigator();
 
@@ -197,10 +198,15 @@ const App = () => {
     );
 };
 // export default App;
+
 export default () => {
-    return (
-        <AuthProvider>
-            <App />
-        </AuthProvider>
-    );
+    return <Header />;
 };
+
+// export default () => {
+//     return (
+//         <AuthProvider>
+//             <App />
+//         </AuthProvider>
+//     );
+// };
