@@ -12,10 +12,17 @@ const Header = ({params}) => {
 const styles = StyleSheet.create({
     viewStyle: {
         backgroundColor: '#F8F8F8',
-        justifyContent: 'center',
+        padding: 15,
         alignItems: 'center',
-        height: 60,
-        paddingTop: 15,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.0,
+
+        elevation: 24,
     },
     textStyle: {
         fontSize: 20,
