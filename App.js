@@ -31,6 +31,7 @@ import {Provider as AuthProvider} from './src/context/AuthContext';
 import {navigationRef} from './src/navigationRef';
 import ReSolveAuthScreen from './src/screens/auth/ResolveAuthScreen';
 import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 const loginStack = createNativeStackNavigator();
 
@@ -200,7 +201,12 @@ const App = () => {
 // export default App;
 
 export default () => {
-    return <Header />;
+    return (
+        <View>
+            <Header headerText="Albums!" />
+            <AlbumList />
+        </View>
+    );
 };
 
 // export default () => {

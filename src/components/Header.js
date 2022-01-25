@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const Header = ({params}) => {
+const Header = ({headerText}) => {
     return (
         <View style={styles.viewStyle}>
-            <Text style={styles.textStyle}>Albums!</Text>
+            <Text style={styles.textStyle}>{headerText}</Text>
         </View>
     );
 };
@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
             width: 0,
             height: 12,
         },
-        shadowOpacity: 0.58,
+        shadowOpacity: 0.2,
         shadowRadius: 16.0,
 
-        elevation: 24,
+        elevation: 2,
     },
     textStyle: {
         fontSize: 20,
